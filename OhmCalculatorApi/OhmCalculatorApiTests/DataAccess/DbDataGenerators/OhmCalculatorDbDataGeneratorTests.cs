@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using OhmCalculatorApi.Abstractions;
 using OhmCalculatorApi.DataAccess.DbDataGenerators;
+using OhmCalculatorApi.Exceptions;
 using OhmCalculatorApi.Models;
 
 namespace OhmCalculatorApiIntegrationTests.DataAccess.DbDataGenerators

@@ -12,6 +12,8 @@
     <None Remove="DataAccess\DbBuilders\" />
     <None Remove="DataAccess\Repositories\" />
     <None Remove="DataAccess\DbDataGenerators\" />
+    <None Remove="Extensions\" />
+    <None Remove="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.7" />
@@ -23,5 +25,7 @@
     <Folder Include="DataAccess\DbBuilders\" />
     <Folder Include="DataAccess\Repositories\" />
     <Folder Include="DataAccess\DbDataGenerators\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>

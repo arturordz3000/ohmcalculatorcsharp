@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using OhmCalculatorApi.Abstractions;
+using OhmCalculatorApi.Exceptions;
 using OhmCalculatorApi.Models;
 
 namespace OhmCalculatorApi.DataAccess.DbDataGenerators
@@ -16,6 +17,12 @@ namespace OhmCalculatorApi.DataAccess.DbDataGenerators
 
         public void Generate()
         {
+            if (unitOfWork.Database != null)
+            {
+                unitOfWork.Database.EnsureDeleted();
+                unitOfWork.Database.EnsureCreated();
+            }
+
             var bandColors = CreateBandColors();
             var multiplierColors = CreateMultiplierColors();
             var toleranceColors = CreateToleranceColors();

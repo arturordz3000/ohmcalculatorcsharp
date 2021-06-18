@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using OhmCalculatorApi.Abstractions;
 using OhmCalculatorApi.DataAccess.Repositories;
 using OhmCalculatorApi.Models;
@@ -21,6 +22,8 @@ namespace OhmCalculatorApi.DataAccess
                 dbContext.Database.EnsureCreated();
             }
         }
+
+        public DatabaseFacade Database { get => dbContext.Database; }
 
         public IRepository<Color> ColorsRepository
         {

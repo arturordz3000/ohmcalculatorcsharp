@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using OhmCalculatorApi.Abstractions;
+using OhmCalculatorApi.DataAccess;
+using OhmCalculatorApi.Extensions;
 
 namespace OhmCalculatorApi
 {
@@ -24,12 +27,12 @@ namespace OhmCalculatorApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+            services.AddDataAccessLayer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbDataGenerator dbDataGenerator)
         {
             if (env.IsDevelopment())
             {
@@ -44,6 +47,8 @@ namespace OhmCalculatorApi
             {
                 endpoints.MapControllers();
             });
+
+            dbDataGenerator.Generate();
         }
     }
 }
