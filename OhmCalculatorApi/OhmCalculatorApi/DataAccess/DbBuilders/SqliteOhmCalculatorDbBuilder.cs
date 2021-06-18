@@ -31,7 +31,8 @@ namespace OhmCalculatorApi.DataAccess.DbBuilders
             modelBuilder.Entity<ColorSelectorConfiguration>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.HasMany(e => e.Colors);
+                entity.HasMany(e => e.Colors)
+                .WithMany(e => e.ColorSelectorConfigurations);
             });
 
             modelBuilder.Entity<ResistorDefault>().ToTable("ResistorDefaults");

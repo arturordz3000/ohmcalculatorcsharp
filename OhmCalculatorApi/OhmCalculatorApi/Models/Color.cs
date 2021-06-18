@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace OhmCalculatorApi.Models
 {
     public class Color
@@ -7,5 +9,6 @@ namespace OhmCalculatorApi.Models
         public string Rgb { get; set; }
         public string ValueDescription { get; set; }
         public decimal ValueNumber { get; set; }
+        public ICollection<ColorSelectorConfiguration> ColorSelectorConfigurations { get; set; }
     }
 }
