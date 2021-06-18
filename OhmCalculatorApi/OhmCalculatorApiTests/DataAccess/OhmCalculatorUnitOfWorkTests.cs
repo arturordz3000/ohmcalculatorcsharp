@@ -44,5 +44,16 @@ namespace OhmCalculatorApiTests.DataAccess
 
             Assert.IsNotNull(repository);
         }
+
+        [TestMethod]
+        public void Can_Save_Changes()
+        {
+            Mock<IOhmCalculatorDbContext> fakeDbContext = new Mock<IOhmCalculatorDbContext>();
+
+            var unitOfWork = new OhmCalculatorUnitOfWork(fakeDbContext.Object);
+            unitOfWork.Save();
+
+            fakeDbContext.Verify(fake => fake.SaveChanges());
+        }
     }
 }

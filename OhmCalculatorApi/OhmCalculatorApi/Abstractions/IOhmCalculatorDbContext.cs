@@ -6,7 +6,7 @@ using OhmCalculatorApi.Models;
 
 namespace OhmCalculatorApi.Abstractions
 {
-    public interface IOhmCalculatorDbContext
+    public interface IOhmCalculatorDbContext : IDisposable
     {
         public DbSet<Color> Colors { get; set; }
         public DbSet<ColorSelectorConfiguration> ColorSelectorConfigurations { get; set; }
@@ -14,5 +14,6 @@ namespace OhmCalculatorApi.Abstractions
 
         public DbSet<TEntity> Set<TEntity>() where TEntity : class;
         public EntityEntry<TEntity> Entry<TEntity>([NotNull] TEntity entity) where TEntity : class;
+        public int SaveChanges();
     }
 }

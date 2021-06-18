@@ -8,5 +8,6 @@ namespace OhmCalculatorApi.Abstractions
         IRepository<Color> ColorsRepository { get; }
         IRepository<ColorSelectorConfiguration> ColorSelectorConfigurationsRepository { get; }
         IRepository<ResistorDefault> ResistorDefaultsRepository { get; }
+        void Save();
     }
 }
