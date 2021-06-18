@@ -9,10 +9,10 @@ namespace OhmCalculatorApi.DataAccess.Repositories
 {
     public class OhmCalculatorRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private OhmCalculatorDbContext dbContext;
+        private IOhmCalculatorDbContext dbContext;
         private DbSet<TEntity> dbSet;
 
-        public OhmCalculatorRepository(OhmCalculatorDbContext dbContext)
+        public OhmCalculatorRepository(IOhmCalculatorDbContext dbContext)
         {
             this.dbContext = dbContext;
             dbSet = dbContext.Set<TEntity>();
