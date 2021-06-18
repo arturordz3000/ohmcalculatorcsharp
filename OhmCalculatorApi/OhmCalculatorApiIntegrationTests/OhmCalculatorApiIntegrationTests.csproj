@@ -19,9 +19,11 @@
   <ItemGroup>
     <None Remove="DataAccess\" />
     <None Remove="DataAccess\Repositories\" />
+    <None Remove="DataAccess\DbDataGenerators\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\" />
     <Folder Include="DataAccess\Repositories\" />
+    <Folder Include="DataAccess\DbDataGenerators\" />
   </ItemGroup>
 </Project>

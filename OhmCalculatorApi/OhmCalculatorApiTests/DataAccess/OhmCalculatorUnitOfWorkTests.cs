@@ -55,5 +55,18 @@ namespace OhmCalculatorApiTests.DataAccess
 
             fakeDbContext.Verify(fake => fake.SaveChanges());
         }
+
+        [TestMethod]
+        public void Should_Dispose_Only_Once()
+        {
+            Mock<IOhmCalculatorDbContext> fakeDbContext = new Mock<IOhmCalculatorDbContext>();
+
+            var unitOfWork = new OhmCalculatorUnitOfWork(fakeDbContext.Object);
+
+            unitOfWork.Dispose();
+            unitOfWork.Dispose();
+
+            fakeDbContext.Verify(fake => fake.Dispose(), times: Times.AtMostOnce);
+        }
     }
 }

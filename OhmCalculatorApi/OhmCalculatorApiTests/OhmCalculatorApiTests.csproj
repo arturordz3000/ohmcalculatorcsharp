@@ -17,9 +17,11 @@
   <ItemGroup>
     <None Remove="DataAccess\" />
     <None Remove="Moq" />
+    <None Remove="DataAccess\DbDataGenerators\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\" />
+    <Folder Include="DataAccess\DbDataGenerators\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OhmCalculatorApi\OhmCalculatorApi.csproj" />

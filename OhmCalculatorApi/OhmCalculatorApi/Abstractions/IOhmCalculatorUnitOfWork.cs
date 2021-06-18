@@ -3,7 +3,7 @@ using OhmCalculatorApi.Models;
 
 namespace OhmCalculatorApi.Abstractions
 {
-    public interface IOhmCalculatorUnitOfWork
+    public interface IOhmCalculatorUnitOfWork : IDisposable
     {
         IRepository<Color> ColorsRepository { get; }
         IRepository<ColorSelectorConfiguration> ColorSelectorConfigurationsRepository { get; }

@@ -15,6 +15,11 @@ namespace OhmCalculatorApi.DataAccess
         public OhmCalculatorUnitOfWork(IOhmCalculatorDbContext dbContext)
         {
             this.dbContext = dbContext;
+
+            if (dbContext.Database != null)
+            {
+                dbContext.Database.EnsureCreated();
+            }
         }
 
         public IRepository<Color> ColorsRepository
