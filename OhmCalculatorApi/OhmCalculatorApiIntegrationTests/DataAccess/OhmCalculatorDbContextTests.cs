@@ -5,7 +5,7 @@ using OhmCalculatorApi.DataAccess.DbBuilders;
 namespace OhmCalculatorApiIntegrationTests
 {
     [TestClass]
-    public class DatabaseTests
+    public class OhmCalculatorDbContextTests
     {
         [TestMethod]
         public void Sqlite_Database_Is_Created_Successfully()

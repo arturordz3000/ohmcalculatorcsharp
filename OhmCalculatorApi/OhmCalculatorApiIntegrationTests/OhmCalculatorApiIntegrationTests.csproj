@@ -16,4 +16,12 @@
   <ItemGroup>
     <ProjectReference Include="..\OhmCalculatorApi\OhmCalculatorApi.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="DataAccess\" />
+    <None Remove="DataAccess\Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+    <Folder Include="DataAccess\Repositories\" />
+  </ItemGroup>
 </Project>
