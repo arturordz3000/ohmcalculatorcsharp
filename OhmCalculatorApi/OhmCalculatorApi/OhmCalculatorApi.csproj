@@ -14,9 +14,11 @@
     <None Remove="DataAccess\DbDataGenerators\" />
     <None Remove="Extensions\" />
     <None Remove="Exceptions\" />
+    <None Remove="Swashbuckle.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.7" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\" />
