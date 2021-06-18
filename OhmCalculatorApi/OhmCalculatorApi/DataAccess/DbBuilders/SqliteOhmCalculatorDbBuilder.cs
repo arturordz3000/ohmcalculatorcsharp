@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using OhmCalculatorApi.Abstractions;
 using OhmCalculatorApi.Models;
 
-namespace OhmCalculatorApi.DataAccess
+namespace OhmCalculatorApi.DataAccess.DbBuilders
 {
     public class SqliteOhmCalculatorDbBuilder : IDbBuilder
     {

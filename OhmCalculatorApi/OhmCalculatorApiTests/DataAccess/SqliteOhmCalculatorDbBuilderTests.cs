@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Sqlite.Infrastructure.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using OhmCalculatorApi.DataAccess;
+using OhmCalculatorApi.DataAccess.DbBuilders;
 
 namespace OhmCalculatorApiTests
 {
@@ -31,8 +31,6 @@ namespace OhmCalculatorApiTests
         [TestMethod]
         public void Make_Sure_Correct_Initialization_When_Creating_Model()
         {
-            Mock<IMutableModel> fakeModel = new Mock<IMutableModel>();
-
             var builder = new SqliteOhmCalculatorDbBuilder("test.db");
             var fakeModelBuilder = new ModelBuilder();
 

@@ -9,6 +9,8 @@
     <None Remove="DataAccess\" />
     <None Remove="Abstractions\" />
     <None Remove="Models\" />
+    <None Remove="DataAccess\DbBuilders\" />
+    <None Remove="DataAccess\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.7" />
@@ -17,5 +19,7 @@
     <Folder Include="DataAccess\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Models\" />
+    <Folder Include="DataAccess\DbBuilders\" />
+    <Folder Include="DataAccess\Repositories\" />
   </ItemGroup>
 </Project>
