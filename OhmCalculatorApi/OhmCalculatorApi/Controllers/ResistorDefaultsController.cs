@@ -11,20 +11,19 @@ namespace OhmCalculatorApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ColorSelectorConfigurationController : ControllerBase
+    public class ResistorDefaultsController : ControllerBase
     {
         private readonly IOhmCalculatorUnitOfWork unitOfWork;
 
-        public ColorSelectorConfigurationController(IOhmCalculatorUnitOfWork unitOfWork)
+        public ResistorDefaultsController(IOhmCalculatorUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
         }
 
         [HttpGet]
-        public IEnumerable<ColorSelectorConfiguration> Get()
+        public IEnumerable<ResistorDefault> Get()
         {
-            var configurations = unitOfWork.ColorSelectorConfigurationsRepository.Get(includeProperties: "Colors");
-            return configurations;
+            return unitOfWork.ResistorDefaultsRepository.Get(includeProperties: "Color");
         }
     }
 }

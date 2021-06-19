@@ -25,20 +25,26 @@ namespace OhmCalculatorApi.DataAccess.DbBuilders
             modelBuilder.Entity<Color>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Rgb).IsRequired(true);
+                entity.Property(e => e.ValueDescription).IsRequired(true);
+                entity.Property(e => e.ValueNumber).IsRequired(true);
+                entity.Property(e => e.ColorType).IsRequired(true);
             });
 
             modelBuilder.Entity<ColorSelectorConfiguration>().ToTable("ColorSelectorConfigurations");
             modelBuilder.Entity<ColorSelectorConfiguration>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).IsRequired(true);
                 entity.HasMany(e => e.Colors)
-                .WithMany(e => e.ColorSelectorConfigurations);
+                    .WithMany(e => e.ColorSelectorConfigurations);
             });
 
             modelBuilder.Entity<ResistorDefault>().ToTable("ResistorDefaults");
             modelBuilder.Entity<ResistorDefault>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Position).IsRequired(true);
                 entity.HasOne(e => e.Color);
             });
         }
