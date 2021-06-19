@@ -37,7 +37,7 @@ namespace OhmCalculatorApi
             services.AddSwaggerGen();
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "OhmCalculatorApp/dist";
+                configuration.RootPath = "OhmCalculatorApp/build";
             });
         }
 
