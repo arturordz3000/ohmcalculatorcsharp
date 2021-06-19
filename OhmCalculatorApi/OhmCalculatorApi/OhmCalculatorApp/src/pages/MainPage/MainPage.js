@@ -6,7 +6,7 @@ import BandColorSelector from '../../components/BandColorSelector/BandColorSelec
 import Button from 'react-bootstrap/Button';
 import { Alert } from 'react-bootstrap';
 
-const apiUrl = 'http://localhost:5000/api'
+const apiUrl = 'https://localhost:5001/api'
 
 const MainPage = () => {
     const state = useState({ resistorConfiguration: [], bandColorSelectorConfiguration: [] });
