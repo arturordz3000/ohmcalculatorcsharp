@@ -17,6 +17,5 @@ namespace OhmCalculatorApi.Models
         public string ValueDescription { get; set; }
         public double ValueNumber { get; set; }
         public ColorType ColorType { get; set; }
-        public ICollection<ColorSelectorConfiguration> ColorSelectorConfigurations { get; set; }
     }
 }

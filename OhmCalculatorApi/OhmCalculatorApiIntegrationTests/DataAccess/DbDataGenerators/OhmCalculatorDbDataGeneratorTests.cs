@@ -30,7 +30,7 @@ namespace OhmCalculatorApiIntegrationTests.DataAccess.DbDataGenerators
                 var colorSelectorConfigurations = unitOfWork.ColorSelectorConfigurationsRepository.Get();
                 var resistorDefaults = unitOfWork.ResistorDefaultsRepository.Get();
 
-                Assert.AreEqual(28, colors.Count);
+                Assert.AreEqual(38, colors.Count);
                 Assert.AreEqual(4, colorSelectorConfigurations.Count);
                 Assert.AreEqual(4, resistorDefaults.Count);
                 AssertColorColorSelectorConfigurations(colorSelectorConfigurations);

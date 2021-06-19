@@ -36,10 +36,7 @@ namespace OhmCalculatorApi
                    .AllowAnyMethod()
                    .AllowAnyHeader();
             }));
-            services.AddControllers().AddNewtonsoftJson(o =>
-            {
-                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            });
+            services.AddControllers();
             services.AddDataAccessLayer();
             services.AddScoped<IOhmCalculatorService<string>, OhmCalculatorService>();
             services.AddSwaggerGen();

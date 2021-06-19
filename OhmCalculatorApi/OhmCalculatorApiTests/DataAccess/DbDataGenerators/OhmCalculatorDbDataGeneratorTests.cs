@@ -6,7 +6,7 @@ using OhmCalculatorApi.DataAccess.DbDataGenerators;
 using OhmCalculatorApi.Exceptions;
 using OhmCalculatorApi.Models;
 
-namespace OhmCalculatorApiIntegrationTests.DataAccess.DbDataGenerators
+namespace OhmCalculatorApiTests.DataAccess.DbDataGenerators
 {
     [TestClass]
     public class OhmCalculatorDbDataGeneratorTests
@@ -27,7 +27,7 @@ namespace OhmCalculatorApiIntegrationTests.DataAccess.DbDataGenerators
 
             generator.Generate();
 
-            fakeColorsRepository.Verify(fake => fake.Insert(It.IsAny<Color>()), times: Times.Exactly(28));
+            fakeColorsRepository.Verify(fake => fake.Insert(It.IsAny<Color>()), times: Times.Exactly(38));
             fakeColorSelectorsRepository.Verify(fake => fake.Insert(It.IsAny<ColorSelectorConfiguration>()), times: Times.Exactly(4));
             fakeResistorDefaultsRespository.Verify(fake => fake.Insert(It.IsAny<ResistorDefault>()), times: Times.Exactly(4));
         }
