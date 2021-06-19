@@ -14,6 +14,7 @@ using OhmCalculatorApi.Abstractions;
 using OhmCalculatorApi.DataAccess;
 using OhmCalculatorApi.Extensions;
 using Newtonsoft.Json;
+using OhmCalculatorApi.Services;
 
 namespace OhmCalculatorApi
 {
@@ -34,6 +35,7 @@ namespace OhmCalculatorApi
                 o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
             services.AddDataAccessLayer();
+            services.AddScoped<IOhmCalculatorService<string>, OhmCalculatorService>();
             services.AddSwaggerGen();
         }
 

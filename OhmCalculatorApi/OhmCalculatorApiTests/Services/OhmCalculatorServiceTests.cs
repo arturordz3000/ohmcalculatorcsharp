@@ -31,7 +31,7 @@ namespace OhmCalculatorApiTests.Services
 
             string result = service.Calculate(2, 1, 3, 4);
 
-            Assert.AreEqual("210 Ohms ±1", result);
+            Assert.AreEqual("210 Ohms ±1%", result);
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace OhmCalculatorApiTests.Services
 
             string result = service.Calculate(2, 1, 3, 4);
 
-            Assert.AreEqual("2.1K Ohms ±5", result);
+            Assert.AreEqual("2.1K Ohms ±5%", result);
         }
 
         [TestMethod]
@@ -77,7 +77,7 @@ namespace OhmCalculatorApiTests.Services
 
             string result = service.Calculate(2, 1, 3, 4);
 
-            Assert.AreEqual("21M Ohms ±3", result);
+            Assert.AreEqual("21M Ohms ±3%", result);
         }
 
         [TestMethod]
@@ -100,7 +100,7 @@ namespace OhmCalculatorApiTests.Services
 
             string result = service.Calculate(2, 1, 3, 4);
 
-            Assert.AreEqual("21G Ohms ±1", result);
+            Assert.AreEqual("21G Ohms ±1%", result);
         }
 
         [TestMethod]

@@ -20,7 +20,13 @@ namespace OhmCalculatorApi.Controllers
             this.unitOfWork = unitOfWork;
         }
 
+        /// <summary>
+        /// Gets the colors list for each selector (dropdown) displayed in the Front
+        /// End application.
+        /// </summary>
         [HttpGet]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
         public IEnumerable<ColorSelectorConfiguration> Get()
         {
             return unitOfWork.ColorSelectorConfigurationsRepository.Get(includeProperties: "Colors");

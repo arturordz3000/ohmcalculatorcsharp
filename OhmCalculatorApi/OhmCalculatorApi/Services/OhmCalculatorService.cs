@@ -15,41 +15,41 @@ namespace OhmCalculatorApi.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public string Calculate(int firstValueColorId, int secondValueColorId, int multiplierColorId, int toleranceColorId)
+        public string Calculate(int firstId, int secondId, int multiplierId, int toleranceId)
         {
-            (var firstColor, var secondColor, var thirdColor, var fourthColor) = ValidateAndGetColors(firstValueColorId, secondValueColorId, multiplierColorId, toleranceColorId);
+            (var firstColor, var secondColor, var thirdColor, var fourthColor) = ValidateAndGetColors(firstId, secondId, multiplierId, toleranceId);
 
             string ohms = GetOhmsValue((firstColor.ValueNumber * 10 + secondColor.ValueNumber) * thirdColor.ValueNumber);
 
-            return $"{ohms} Ohms ±{fourthColor.ValueNumber}";
+            return $"{ohms} Ohms ±{fourthColor.ValueNumber}%";
         }
 
-        private (Color, Color, Color, Color) ValidateAndGetColors(int firstValueColorId, int secondValueColorId, int multiplierColorId, int toleranceColorId)
+        private (Color, Color, Color, Color) ValidateAndGetColors(int firstId, int secondId, int multiplierId, int toleranceId)
         {
             var colors = unitOfWork.ColorsRepository.Get();
-            var firstColor = colors.FirstOrDefault(color => color.Id == firstValueColorId && color.ColorType == ColorType.Value);
-            var secondColor = colors.FirstOrDefault(color => color.Id == secondValueColorId && color.ColorType == ColorType.Value);
-            var thirdColor = colors.FirstOrDefault(color => color.Id == multiplierColorId && color.ColorType == ColorType.Multiplier);
-            var fourthColor = colors.FirstOrDefault(color => color.Id == toleranceColorId && color.ColorType == ColorType.Tolerance);
+            var firstColor = colors.FirstOrDefault(color => color.Id == firstId && color.ColorType == ColorType.Value);
+            var secondColor = colors.FirstOrDefault(color => color.Id == secondId && color.ColorType == ColorType.Value);
+            var thirdColor = colors.FirstOrDefault(color => color.Id == multiplierId && color.ColorType == ColorType.Multiplier);
+            var fourthColor = colors.FirstOrDefault(color => color.Id == toleranceId && color.ColorType == ColorType.Tolerance);
 
             if (firstColor is null)
             {
-                throw new ArgumentException("Invalid color ID", nameof(firstValueColorId));
+                throw new ArgumentException("Invalid color ID", nameof(firstId));
             }
 
             if (secondColor is null)
             {
-                throw new ArgumentException("Invalid color ID", nameof(secondValueColorId));
+                throw new ArgumentException("Invalid color ID", nameof(secondId));
             }
 
             if (thirdColor is null)
             {
-                throw new ArgumentException("Invalid color ID", nameof(multiplierColorId));
+                throw new ArgumentException("Invalid color ID", nameof(multiplierId));
             }
 
             if (fourthColor is null)
             {
-                throw new ArgumentException("Invalid color ID", nameof(toleranceColorId));
+                throw new ArgumentException("Invalid color ID", nameof(toleranceId));
             }
 
             return (firstColor, secondColor, thirdColor, fourthColor);

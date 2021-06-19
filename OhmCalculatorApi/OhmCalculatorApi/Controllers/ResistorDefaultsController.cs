@@ -20,7 +20,12 @@ namespace OhmCalculatorApi.Controllers
             this.unitOfWork = unitOfWork;
         }
 
+        /// <summary>
+        /// Gets the color bands configuration (default position and color) for the resistor displayed in the Front End application.
+        /// </summary>
         [HttpGet]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
         public IEnumerable<ResistorDefault> Get()
         {
             return unitOfWork.ResistorDefaultsRepository.Get(includeProperties: "Color");
