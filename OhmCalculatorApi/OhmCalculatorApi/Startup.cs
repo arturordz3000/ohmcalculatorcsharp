@@ -15,6 +15,7 @@ using OhmCalculatorApi.DataAccess;
 using OhmCalculatorApi.Extensions;
 using Newtonsoft.Json;
 using OhmCalculatorApi.Services;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 
 namespace OhmCalculatorApi
 {
@@ -40,6 +41,10 @@ namespace OhmCalculatorApi
             services.AddDataAccessLayer();
             services.AddScoped<IOhmCalculatorService<string>, OhmCalculatorService>();
             services.AddSwaggerGen();
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "OhmCalculatorApp/dist";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +70,16 @@ namespace OhmCalculatorApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "OhmCalculatorApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
 
             dbDataGenerator.Generate();
