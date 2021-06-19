@@ -33,3 +33,18 @@ Next, open your browser and navigate to `https://localhost:5001`. You will see t
 
 ### Testing the REST API
 There's a REST API visualizer included in this application, which you can access by navigating to `https://localhost:5001/swagger`. There, you can test the REST API's endpoints.
+
+### Visualizing the Database
+A Sqlite database file is automatically generated when the application starts. This file is generated using Entity Framework and a code-first approach. The file is located in `./OhmCalculatorApi/OhmCalculatorApi/ohmcalculator.db` which can be opened by many applications that you can find in the internet, but I recommend to use DB Browser for SQLite (`https://sqlitebrowser.org/`).
+
+### Running the tests
+Open a terminal (or powershell) window inside the project's folder and then execute the following commands:
+
+    cd ./OhmCalculatorApi
+    dotnet test
+
+If all tests were successful, you should be able to see something like this:
+
+    Passed!  - Failed:     0, Passed:    23, Skipped:     0, Total:    23, Duration: 974 ms - /Users/arturorodriguez/Documents/Repositories/ohmcalculatorcsharp/OhmCalculatorApi/OhmCalculatorApiTests/bin/Debug/net5.0/OhmCalculatorApiTests.dll (net5.0)
+
+    Passed!  - Failed:     0, Passed:     5, Skipped:     0, Total:     5, Duration: 1 s - /Users/arturorodriguez/Documents/Repositories/ohmcalculatorcsharp/OhmCalculatorApi/OhmCalculatorApiIntegrationTests/bin/Debug/net5.0/OhmCalculatorApiIntegrationTests.dll (net5.0)
