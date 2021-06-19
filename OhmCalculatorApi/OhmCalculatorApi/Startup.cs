@@ -31,12 +31,6 @@ namespace OhmCalculatorApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options => options.AddPolicy("AllowAnyPolicy", builder =>
-            {
-                builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
-            }));
             services.AddControllers();
             services.AddDataAccessLayer();
             services.AddScoped<IOhmCalculatorService<string>, OhmCalculatorService>();
@@ -62,8 +56,6 @@ namespace OhmCalculatorApi
             });
 
             app.UseRouting();
-
-            app.UseCors("AllowAnyPolicy");
 
             app.UseAuthorization();
 
