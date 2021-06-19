@@ -1,0 +1,11 @@
+.MainPage {
+    text-align: center;
+}
+
+.MainPage p {
+    margin: 16px;
+}
+
+.MainPage-section {
+    margin-top: 20px;
+}

@@ -30,6 +30,12 @@ namespace OhmCalculatorApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => options.AddPolicy("AllowAnyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+            }));
             services.AddControllers().AddNewtonsoftJson(o =>
             {
                 o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -54,6 +60,8 @@ namespace OhmCalculatorApi
             });
 
             app.UseRouting();
+
+            app.UseCors("AllowAnyPolicy");
 
             app.UseAuthorization();
 

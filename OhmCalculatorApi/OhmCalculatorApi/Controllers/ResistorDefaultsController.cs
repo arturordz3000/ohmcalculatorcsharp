@@ -28,7 +28,7 @@ namespace OhmCalculatorApi.Controllers
         [ProducesResponseType(500)]
         public IEnumerable<ResistorDefault> Get()
         {
-            return unitOfWork.ResistorDefaultsRepository.Get(includeProperties: "Color");
+            return unitOfWork.ResistorDefaultsRepository.Get(includeProperties: "Color", orderBy: (queryable) => queryable.OrderBy(element => element.Id));
         }
     }
 }

@@ -1,0 +1,15 @@
+.BandColorSelector {
+    text-align: center;
+}
+
+.BandColorSelector-option {
+    display: inline-block;
+    border-color: black;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.BandColorSelector-row .BandColorSelector-option:last-child {
+    border-width: 1px 1px 1px 1px;
+}

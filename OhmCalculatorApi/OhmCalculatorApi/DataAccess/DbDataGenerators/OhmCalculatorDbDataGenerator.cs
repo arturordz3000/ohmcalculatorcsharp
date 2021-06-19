@@ -38,10 +38,10 @@ namespace OhmCalculatorApi.DataAccess.DbDataGenerators
             }
 
             var colorSelectorConfigurations = new List<ColorSelectorConfiguration>();
-            colorSelectorConfigurations.Add(new ColorSelectorConfiguration { Name = "First Band", Colors = bandColors });
-            colorSelectorConfigurations.Add(new ColorSelectorConfiguration { Name = "Second Band", Colors = bandColors });
-            colorSelectorConfigurations.Add(new ColorSelectorConfiguration { Name = "Multiplier", Colors = multiplierColors });
-            colorSelectorConfigurations.Add(new ColorSelectorConfiguration { Name = "Tolerance", Colors = toleranceColors });
+            colorSelectorConfigurations.Add(new ColorSelectorConfiguration { Id = 1, Name = "First Band", Colors = bandColors });
+            colorSelectorConfigurations.Add(new ColorSelectorConfiguration { Id = 2, Name = "Second Band", Colors = bandColors });
+            colorSelectorConfigurations.Add(new ColorSelectorConfiguration { Id = 3, Name = "Multiplier", Colors = multiplierColors });
+            colorSelectorConfigurations.Add(new ColorSelectorConfiguration { Id = 4, Name = "Tolerance", Colors = toleranceColors });
 
             foreach (var colorSelectorConfiguration in colorSelectorConfigurations)
             {
@@ -49,10 +49,10 @@ namespace OhmCalculatorApi.DataAccess.DbDataGenerators
             }
 
             var resistorDefaults = new List<ResistorDefault>();
-            resistorDefaults.Add(new ResistorDefault { Position = "20px", Color = allColors[0] });
-            resistorDefaults.Add(new ResistorDefault { Position = "40px", Color = allColors[0] });
-            resistorDefaults.Add(new ResistorDefault { Position = "60px", Color = allColors[10] });
-            resistorDefaults.Add(new ResistorDefault { Position = "180px", Color = allColors[26] });
+            resistorDefaults.Add(new ResistorDefault { Id = 1, Position = "20px", Color = allColors[0] });
+            resistorDefaults.Add(new ResistorDefault { Id = 2, Position = "40px", Color = allColors[0] });
+            resistorDefaults.Add(new ResistorDefault { Id = 3, Position = "60px", Color = allColors[10] });
+            resistorDefaults.Add(new ResistorDefault { Id = 4, Position = "180px", Color = allColors[26] });
 
             foreach (var resistorDefault in resistorDefaults)
             {

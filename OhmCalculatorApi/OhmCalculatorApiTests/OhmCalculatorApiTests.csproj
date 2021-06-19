@@ -19,14 +19,12 @@
     <None Remove="Moq" />
     <None Remove="DataAccess\DbDataGenerators\" />
     <None Remove="Services\" />
-    <None Remove="Extensions\" />
     <None Remove="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\" />
     <Folder Include="DataAccess\DbDataGenerators\" />
     <Folder Include="Services\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>

@@ -29,7 +29,7 @@ namespace OhmCalculatorApi.Controllers
         [ProducesResponseType(500)]
         public IEnumerable<ColorSelectorConfiguration> Get()
         {
-            return unitOfWork.ColorSelectorConfigurationsRepository.Get(includeProperties: "Colors");
+            return unitOfWork.ColorSelectorConfigurationsRepository.Get(includeProperties: "Colors", orderBy: (queryable) => queryable.OrderBy(element => element.Id));
         }
     }
 }
